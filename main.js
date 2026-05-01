@@ -12,24 +12,37 @@ const views = {
   clock: document.getElementById('clock-view'),
   timer: document.getElementById('timer-view'),
   stopwatch: document.getElementById('stopwatch-view'),
-  affiliate: document.getElementById('affiliate-view')
+  affiliate: document.getElementById('affiliate-view'),
+  about: document.getElementById('about-view'),
+  terms: document.getElementById('terms-view'),
+  privacy: document.getElementById('privacy-view')
 };
 
 const navBtns = document.querySelectorAll('.nav-btn');
+const footerBtns = document.querySelectorAll('.text-link');
 
 function switchView(viewId) {
   Object.keys(views).forEach(key => {
-    views[key].classList.toggle('active', key === viewId);
+    if (views[key]) {
+      views[key].classList.toggle('active', key === viewId);
+    }
   });
   
   navBtns.forEach(btn => {
     btn.classList.toggle('active', btn.dataset.view === viewId);
   });
   
+  // Scroll to top when switching views
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
   activeView = viewId;
 }
 
 navBtns.forEach(btn => {
+  btn.addEventListener('click', () => switchView(btn.dataset.view));
+});
+
+footerBtns.forEach(btn => {
   btn.addEventListener('click', () => switchView(btn.dataset.view));
 });
 

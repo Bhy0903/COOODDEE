@@ -32,6 +32,9 @@
         <button class="nav-btn" data-view="affiliate" title="제휴 문의">
           <i data-lucide="handshake"></i>
         </button>
+        <button class="nav-btn" data-view="about" title="앱 정보">
+          <i data-lucide="info"></i>
+        </button>
       </nav>
       <button id="theme-toggle" class="icon-btn" title="테마 전환">
         <i data-lucide="moon" id="theme-icon"></i>
@@ -105,6 +108,46 @@
           </form>
         </div>
       </section>
+
+      <!-- About View -->
+      <section id="about-view" class="view">
+        <div class="display-card text-left">
+          <h2 class="view-title">앱 정보</h2>
+          <p class="content-text">TimeKeeper는 현대적인 감각과 직관적인 인터페이스를 갖춘 올인원 시간 관리 도구입니다. 정확한 현재 시각 확인부터 집중을 위한 타이머, 정밀한 스톱워치 기능까지 제공합니다.</p>
+          <h3 class="section-subtitle">주요 기능</h3>
+          <ul class="feature-list">
+            <li><strong>시계:</strong> 밀리초 단위의 정확도와 세련된 날짜 표시</li>
+            <li><strong>타이머:</strong> 사용자 맞춤형 시간 설정 및 알림 기능</li>
+            <li><strong>스톱워치:</strong> 랩 타임 기록 기능을 포함한 정밀 측정</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Terms View -->
+      <section id="terms-view" class="view">
+        <div class="display-card text-left">
+          <h2 class="view-title">이용약관</h2>
+          <div class="scroll-box">
+            <p>본 약관은 TimeKeeper 서비스 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+            <p>1. 서비스의 제공: 본 앱은 시계, 타이머, 스톱워치 등 시간 관련 기능을 무료로 제공합니다.</p>
+            <p>2. 이용자의 의무: 이용자는 본 서비스를 개인적, 비상업적 용도로만 사용해야 합니다.</p>
+            <p>3. 면책조항: 본 서비스는 '있는 그대로' 제공되며, 기술적 오류로 인한 데이터 손실 등에 대해 책임을 지지 않습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy View -->
+      <section id="privacy-view" class="view">
+        <div class="display-card text-left">
+          <h2 class="view-title">개인정보처리방침</h2>
+          <div class="scroll-box">
+            <p>TimeKeeper는 사용자의 개인정보를 소중히 다룹니다.</p>
+            <p>1. 수집하는 정보: 문의하기 폼 사용 시 성함과 이메일 주소를 수집합니다. 이는 문의 응대 목적으로만 사용됩니다.</p>
+            <p>2. 쿠키 사용: 구글 애드센스와 같은 타사 서비스에서 광고 제공을 위해 쿠키를 사용할 수 있습니다.</p>
+            <p>3. 정보의 보유: 수집된 이메일 정보는 문의 해결 후 즉시 파기하거나 사용자의 요청 시 삭제합니다.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <section class="comments-section">
@@ -115,6 +158,10 @@
     </section>
 
     <footer>
+      <div class="footer-links">
+        <button class="text-link" data-view="terms">이용약관</button>
+        <button class="text-link" data-view="privacy">개인정보처리방침</button>
+      </div>
       <p>&copy; 2026 Modern Timer App - Built with Gemini CLI</p>
     </footer>
   </div>
