@@ -26,6 +26,9 @@ A feature-rich, visually stunning timer application built with framework-less mo
 - **Disqus Integration**:
   - Integrated comment system for user feedback and discussion.
   - Located at the bottom of the application container for persistent visibility.
+- **Google AdSense Integration**:
+  - AdSense script added for monetization.
+  - `ads.txt` file created for site ownership and authorization verification.
 
 ### Design Specification
 - **Visual Style**: Glassmorphism with deep shadows and vibrant gradients.
@@ -39,4 +42,5 @@ A feature-rich, visually stunning timer application built with framework-less mo
 3. [x] Define core styles in `style.css`
 4. [x] Implement logic in `main.js`
 5. [x] Add Disqus comment section
-6. [ ] Verify and Deploy to GitHub
+6. [x] Integrate Google AdSense & ads.txt
+7. [ ] Verify and Deploy to GitHub
