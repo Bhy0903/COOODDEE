@@ -1,14 +1,92 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Timer App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+<body class="dark-theme">
+  <div class="app-container">
+    <header>
+      <div class="logo">
+        <i data-lucide="clock"></i>
+        <span>TimeKeeper</span>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-view="clock" title="현재 시각">
+          <i data-lucide="watch"></i>
+        </button>
+        <button class="nav-btn" data-view="timer" title="타이머">
+          <i data-lucide="timer"></i>
+        </button>
+        <button class="nav-btn" data-view="stopwatch" title="스톱워치">
+          <i data-lucide="hourglass"></i>
+        </button>
+      </nav>
+      <button id="theme-toggle" class="icon-btn" title="테마 전환">
+        <i data-lucide="moon" id="theme-icon"></i>
+      </button>
+    </header>
+
+    <main>
+      <!-- Clock View -->
+      <section id="clock-view" class="view active">
+        <div class="display-card">
+          <div class="date-display" id="current-date">----년 --월 --일 ---요일</div>
+          <div class="time-display" id="current-time">00:00:00</div>
+        </div>
+      </section>
+
+      <!-- Timer View -->
+      <section id="timer-view" class="view">
+        <div class="display-card">
+          <div class="timer-controls">
+            <div class="input-group">
+              <input type="number" id="timer-min" placeholder="00" min="0" max="59">
+              <span>:</span>
+              <input type="number" id="timer-sec" placeholder="00" min="0" max="59">
+            </div>
+            <div class="timer-display" id="timer-display">00:00</div>
+            <div class="action-buttons">
+              <button id="timer-start" class="btn primary"><i data-lucide="play"></i> 시작</button>
+              <button id="timer-pause" class="btn secondary hidden"><i data-lucide="pause"></i> 일시정지</button>
+              <button id="timer-reset" class="btn outline"><i data-lucide="rotate-ccw"></i> 초기화</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stopwatch View -->
+      <section id="stopwatch-view" class="view">
+        <div class="display-card">
+          <div class="stopwatch-display" id="stopwatch-display">00:00.00</div>
+          <div class="action-buttons">
+            <button id="sw-start" class="btn primary"><i data-lucide="play"></i> 시작</button>
+            <button id="sw-pause" class="btn secondary hidden"><i data-lucide="pause"></i> 일시정지</button>
+            <button id="sw-lap" class="btn secondary hidden"><i data-lucide="flag"></i> 랩</button>
+            <button id="sw-reset" class="btn outline"><i data-lucide="rotate-ccw"></i> 초기화</button>
+          </div>
+          <div class="lap-container">
+            <ul id="lap-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Modern Timer App - Built with Gemini CLI</p>
+    </footer>
+  </div>
+
+  <script src="main.js" type="module"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
 </body>
 </html>

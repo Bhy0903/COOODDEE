@@ -1,1 +1,286 @@
-/* Add styles here */
+:root {
+  /* Light Theme Colors (OKLCH) */
+  --bg-color: oklch(95% 0.01 260);
+  --container-bg: rgba(255, 255, 255, 0.7);
+  --text-primary: oklch(25% 0.02 260);
+  --text-secondary: oklch(45% 0.02 260);
+  --accent: oklch(65% 0.25 260);
+  --accent-glow: oklch(65% 0.25 260 / 30%);
+  --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --border-color: rgba(255, 255, 255, 0.18);
+  --btn-secondary: oklch(90% 0.02 260);
+}
+
+.dark-theme {
+  /* Dark Theme Colors */
+  --bg-color: oklch(15% 0.02 260);
+  --container-bg: rgba(30, 30, 40, 0.6);
+  --text-primary: oklch(95% 0.01 260);
+  --text-secondary: oklch(75% 0.02 260);
+  --accent: oklch(70% 0.2 190);
+  --accent-glow: oklch(70% 0.2 190 / 40%);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --btn-secondary: oklch(25% 0.02 260);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 90%;
+  max-width: 500px;
+  background: var(--container-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  background: var(--btn-secondary);
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.nav-btn.active {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.view {
+  display: none;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.display-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Clock Styling */
+.date-display {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.time-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+/* Timer Styling */
+.timer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.input-group input {
+  width: 80px;
+  height: 80px;
+  background: var(--btn-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--accent);
+}
+
+.timer-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.btn.secondary {
+  background: var(--btn-secondary);
+  color: var(--text-primary);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Stopwatch Styling */
+.stopwatch-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.lap-container {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: 16px;
+  padding-right: 8px;
+}
+
+.lap-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.lap-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 2px;
+}
+
+#lap-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.lap-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--btn-secondary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .time-display, .timer-display, .stopwatch-display {
+    font-size: 3rem;
+  }
+  .input-group input {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
