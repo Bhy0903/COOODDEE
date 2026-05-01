@@ -23,6 +23,9 @@ A feature-rich, visually stunning timer application built with framework-less mo
 - **Affiliate Inquiry Form**:
   - Direct message sending via Formspree.
   - Modern input validation and glassmorphism styling.
+- **Disqus Integration**:
+  - Integrated comment system for user feedback and discussion.
+  - Located at the bottom of the application container for persistent visibility.
 
 ### Design Specification
 - **Visual Style**: Glassmorphism with deep shadows and vibrant gradients.
@@ -35,4 +38,5 @@ A feature-rich, visually stunning timer application built with framework-less mo
 2. [x] Structure UI in `index.html`
 3. [x] Define core styles in `style.css`
 4. [x] Implement logic in `main.js`
-5. [x] Verify and Deploy to GitHub
+5. [x] Add Disqus comment section
+6. [ ] Verify and Deploy to GitHub
