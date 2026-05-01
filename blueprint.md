@@ -32,4 +32,4 @@ A feature-rich, visually stunning timer application built with framework-less mo
 2. [x] Structure UI in `index.html`
 3. [x] Define core styles in `style.css`
 4. [x] Implement logic in `main.js`
-5. [ ] Verify and Deploy to GitHub
+5. [x] Verify and Deploy to GitHub
