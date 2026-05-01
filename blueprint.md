@@ -20,6 +20,9 @@ A feature-rich, visually stunning timer application built with framework-less mo
 - **Theme Engine**:
   - Light/Dark mode toggle.
   - Persistent storage via `localStorage`.
+- **Affiliate Inquiry Form**:
+  - Direct message sending via Formspree.
+  - Modern input validation and glassmorphism styling.
 
 ### Design Specification
 - **Visual Style**: Glassmorphism with deep shadows and vibrant gradients.

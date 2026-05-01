@@ -27,6 +27,9 @@
         <button class="nav-btn" data-view="stopwatch" title="스톱워치">
           <i data-lucide="hourglass"></i>
         </button>
+        <button class="nav-btn" data-view="affiliate" title="제휴 문의">
+          <i data-lucide="handshake"></i>
+        </button>
       </nav>
       <button id="theme-toggle" class="icon-btn" title="테마 전환">
         <i data-lucide="moon" id="theme-icon"></i>
@@ -74,6 +77,30 @@
           <div class="lap-container">
             <ul id="lap-list"></ul>
           </div>
+        </div>
+      </section>
+
+      <!-- Affiliate View -->
+      <section id="affiliate-view" class="view">
+        <div class="display-card">
+          <h2 class="view-title">제휴 문의</h2>
+          <form action="https://formspree.io/f/xaqvnweb" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">성함</label>
+              <input type="text" id="name" name="name" placeholder="홍길동" required>
+            </div>
+            <div class="form-group">
+              <label for="email">이메일</label>
+              <input type="email" id="email" name="_replyto" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">문의 내용</label>
+              <textarea id="message" name="message" rows="4" placeholder="제휴 관련 내용을 입력해주세요." required></textarea>
+            </div>
+            <button type="submit" class="btn primary full-width">
+              <i data-lucide="send"></i> 문의하기
+            </button>
+          </form>
         </div>
       </section>
     </main>

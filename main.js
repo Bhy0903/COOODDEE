@@ -11,7 +11,8 @@ let theme = localStorage.getItem('theme') || 'dark';
 const views = {
   clock: document.getElementById('clock-view'),
   timer: document.getElementById('timer-view'),
-  stopwatch: document.getElementById('stopwatch-view')
+  stopwatch: document.getElementById('stopwatch-view'),
+  affiliate: document.getElementById('affiliate-view')
 };
 
 const navBtns = document.querySelectorAll('.nav-btn');
